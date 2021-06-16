@@ -5,7 +5,7 @@ sudo apt-get install nload
 
 sudo mkdir /mnt/smb_d24_0/
 
-sudo mount -t cifs //192.168.0.42/share /mnt/smb_d24_0/ -o uid=qinyu,gid=qinyu,guest
+sudo mount -t cifs //192.168.0.24/share /mnt/smb_d24_0/ -o uid=qinyu,gid=qinyu,guest
 
 sudo apt install -y libsodium-dev cmake g++ git
 
