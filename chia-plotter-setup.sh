@@ -3,6 +3,8 @@ sudo apt-get install htop
 sudo apt-get install cifs-utils
 sudo apt-get install nload
 
+ulimit -n 10000
+
 sudo mkdir /mnt/smb_d24_0/
 
 sudo mount -t cifs //192.168.0.24/share /mnt/smb_d24_0/ -o uid=qinyu,gid=qinyu,guest
