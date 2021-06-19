@@ -23,7 +23,7 @@ cd chia-plotter
 git submodule update --init
 ./make_devel.sh
 
-sudo mkdir -p ~/chia-plotter/sync/
+mkdir sync
 
 
 
