@@ -24,9 +24,10 @@ git submodule update --init
 
 sudo mkdir -p ~/chia-plotter/sync/
 
+cd ./sync
 
 
-echo "nohup ./build/chia_plot -n -1 \-r 16 -u 128 -t /media/qinyu/ssd0/ -2 /media/qinyu/ssd1/ -d /media/qinyu/ssd0/dest/ -p a795a9669ec652c07bd9a9e78c7c8317e76e8ee628af1759b8375b119e1b043460fac837916af2cb73372b59d68a6135 -f 824be3ba2cfb3d615f945a0ea7813c0bf7091ce385e001a6c784364e095cf43e3e575c14e63ccaabef025d48e74db377 &" > ~/chia-plotter/sync/run_plotter.sh
+echo "nohup ./build/chia_plot -n -1 \-r 16 -u 128 -t /media/qinyu/ssd0/ -2 /media/qinyu/ssd1/ -d /media/qinyu/ssd0/dest/ -p a795a9669ec652c07bd9a9e78c7c8317e76e8ee628af1759b8375b119e1b043460fac837916af2cb73372b59d68a6135 -f 824be3ba2cfb3d615f945a0ea7813c0bf7091ce385e001a6c784364e095cf43e3e575c14e63ccaabef025d48e74db377 &" > run_plotter.sh
 
 
 
