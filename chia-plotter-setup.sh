@@ -37,7 +37,7 @@ cd ./sync
 echo "
 inotifywait -m /media/qinyu/ssd0/dest/ -e create -e moved_to |
     while read path action file; do
-        if [["$file" =~ .*plot$ ]]; then # Does the file end with .plot?
+        if [["\$file" =~ .*plot$ ]]; then # Does the file end with .plot?
             mv /media/qinyu/ssd0/dest/ /mnt/smb_d24_0/ # If so, do your thing here!
         fi
     done
