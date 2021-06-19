@@ -2,6 +2,7 @@ sudo apt-get install smartmontools
 sudo apt-get install htop
 sudo apt-get install cifs-utils
 sudo apt-get install nload
+sudo apt-get install -y inotify-tools
 
 ulimit -n 10000
 sudo mkdir /mnt/smb_d24_0/
@@ -24,19 +25,15 @@ git submodule update --init
 
 sudo mkdir -p ~/chia-plotter/sync/
 
-cd ./sync
+
 
 
 echo "nohup ./build/chia_plot -n -1 \-r 16 -u 128 -t /media/qinyu/ssd0/ -2 /media/qinyu/ssd1/ -d /media/qinyu/ssd0/dest/ -p a795a9669ec652c07bd9a9e78c7c8317e76e8ee628af1759b8375b119e1b043460fac837916af2cb73372b59d68a6135 -f 824be3ba2cfb3d615f945a0ea7813c0bf7091ce385e001a6c784364e095cf43e3e575c14e63ccaabef025d48e74db377 &" > run_plotter.sh
 
 
 
-## run_plotter.sh dest need to bo motified
-sudo apt-get install -y inotify-tools
-mkdir /media/qinyu/ssd0/dest/
-mkdir ~/chia-plotter/sync/
-nohup mv ./*.plot /mnt/smb_d24_0/ &
 
+cd ./sync
 
 echo "
 inotifywait -m /media/qinyu/ssd0/dest/ -e create -e moved_to |
@@ -45,6 +42,6 @@ inotifywait -m /media/qinyu/ssd0/dest/ -e create -e moved_to |
             mv /media/qinyu/ssd0/dest/ /mnt/smb_d24_0/ # If so, do your thing here!
         fi
     done
-" > ~/chia-plotter/sync/sync-fg.sh
+" > sync-fg.sh
 
-echo "nohup bash ./sync-fg.sh &" > ~/chia-plotter/sync/sync.sh
+echo "nohup bash ./sync-fg.sh &" > sync.sh
